@@ -1,6 +1,6 @@
-# convex_bottom_bar_example
+# convex_bottom_bar_gothomesafe_example
 
-Demonstrates how to use the convex_bottom_bar plugin.
+Demonstrates how to use the convex_bottom_bar_gothomesafe plugin.
 
 ## Getting Started
 

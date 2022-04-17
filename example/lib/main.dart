@@ -16,7 +16,7 @@
 
 import 'package:convex_app_bar_example/convex_button_demo.dart';
 import 'package:convex_app_bar_example/custom_appbar_sample.dart';
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'package:convex_bottom_bar_gothomesafe/convex_bottom_bar_gothomesafe.dart';
 import 'package:flutter/material.dart';
 
 import 'default_appbar_demo.dart';

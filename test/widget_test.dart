@@ -13,8 +13,8 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
-import 'package:convex_bottom_bar/src/style/blend_image_icon.dart';
+import 'package:convex_bottom_bar_gothomesafe/convex_bottom_bar.dart';
+import 'package:convex_bottom_bar_gothomesafe/src/style/blend_image_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -29,11 +29,9 @@ void main() {
     }, throwsAssertionError);
   });
 
-  testWidgets('TabStyle.fixed, all tab has icon and text',
-      (WidgetTester tester) async {
+  testWidgets('TabStyle.fixed, all tab has icon and text', (WidgetTester tester) async {
     var key = GlobalKey<ConvexAppBarState>();
-    var tabController =
-        TabController(length: 3, vsync: tester, initialIndex: 2);
+    var tabController = TabController(length: 3, vsync: tester, initialIndex: 2);
     await tester.pumpWidget(material(ConvexAppBar(
       key: key,
       controller: tabController,
@@ -58,8 +56,7 @@ void main() {
     expect(2, tabController.index);
   });
 
-  testWidgets('TabStyle.reactCircle, selected tab has no text',
-      (WidgetTester tester) async {
+  testWidgets('TabStyle.reactCircle, selected tab has no text', (WidgetTester tester) async {
     await tester.pumpWidget(material(ConvexAppBar(
       items: [
         TabItem(title: 'Tab A', icon: Icons.add),
@@ -80,8 +77,7 @@ void main() {
     expect(find.text('Tab C'), findsOneWidget);
   });
 
-  testWidgets('TabStyle.textIn, only selected tab has text',
-      (WidgetTester tester) async {
+  testWidgets('TabStyle.textIn, only selected tab has text', (WidgetTester tester) async {
     await tester.pumpWidget(
       material(
         ConvexAppBar(
@@ -186,8 +182,7 @@ void main() {
   });
 
   testWidgets('Test tab controller', (WidgetTester tester) async {
-    var controller =
-        TabController(length: 3, vsync: TestVSync(), initialIndex: 2);
+    var controller = TabController(length: 3, vsync: TestVSync(), initialIndex: 2);
     var key = GlobalKey(debugLabel: 'appbar');
     var appbar = ConvexAppBar.builder(
       key: key,
@@ -305,11 +300,7 @@ void main() {
     (WidgetTester tester) async {
       try {
         await tester.pumpWidget(ConvexAppBar(
-          items: [
-            TabItem(title: 'A', icon: Icons.add),
-            TabItem(title: 'B', icon: Icons.add),
-            TabItem(title: 'C', icon: Icons.add)
-          ],
+          items: [TabItem(title: 'A', icon: Icons.add), TabItem(title: 'B', icon: Icons.add), TabItem(title: 'C', icon: Icons.add)],
           initialActiveIndex: 3,
           top: -20,
           onTap: (i) {
@@ -345,11 +336,7 @@ void main() {
     (WidgetTester tester) async {
       await tester.pumpWidget(
         ConvexAppBar(
-          items: [
-            TabItem(title: 'A', icon: Icons.add),
-            TabItem(title: 'B', icon: Icons.add),
-            TabItem(title: 'C', icon: Icons.add)
-          ],
+          items: [TabItem(title: 'A', icon: Icons.add), TabItem(title: 'B', icon: Icons.add), TabItem(title: 'C', icon: Icons.add)],
           cornerRadius: 25,
         ),
         Duration(milliseconds: 300),
@@ -358,11 +345,7 @@ void main() {
       try {
         await tester.pumpWidget(
           ConvexAppBar(
-            items: [
-              TabItem(title: 'A', icon: Icons.add),
-              TabItem(title: 'B', icon: Icons.add),
-              TabItem(title: 'C', icon: Icons.add)
-            ],
+            items: [TabItem(title: 'A', icon: Icons.add), TabItem(title: 'B', icon: Icons.add), TabItem(title: 'C', icon: Icons.add)],
             cornerRadius: -25,
           ),
           Duration(milliseconds: 300),
@@ -387,11 +370,7 @@ void main() {
   testWidgets('Test event block', (WidgetTester tester) async {
     await tester.pumpWidget(
       material(ConvexAppBar(
-        items: [
-          TabItem(title: 'A', icon: Icons.add),
-          TabItem(title: 'B', icon: Icons.add),
-          TabItem(title: 'C', icon: Icons.add)
-        ],
+        items: [TabItem(title: 'A', icon: Icons.add), TabItem(title: 'B', icon: Icons.add), TabItem(title: 'C', icon: Icons.add)],
         onTabNotify: (_) {
           assert(_ == 1);
           return false;

@@ -22,8 +22,7 @@ import 'package:flutter/material.dart';
 class BlendImageIcon<T> extends StatelessWidget {
   /// Create image widget
   const BlendImageIcon(this.image, {Key? key, this.color, this.size})
-      : assert(image is Widget || image is IconData,
-            'image must be IconData or Widget'),
+      : assert(image is Widget || image is IconData, 'image must be IconData or Widget'),
         super(key: key);
 
   /// Color used for Icon and gradient.
@@ -53,8 +52,7 @@ class BlendImageIcon<T> extends StatelessWidget {
         height: s,
         child: ShaderMask(
           shaderCallback: (Rect bounds) {
-            return LinearGradient(colors: [color!, color!])
-                .createShader(bounds);
+            return LinearGradient(colors: [color!, color!]).createShader(bounds);
           },
           blendMode: BlendMode.srcIn,
           child: image as Widget,

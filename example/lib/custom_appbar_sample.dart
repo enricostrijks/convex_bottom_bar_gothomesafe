@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'package:convex_bottom_bar_gothomesafe/convex_bottom_bar_gothomesafe.dart';
 import 'package:flutter/material.dart';
 
 import 'color_item_view.dart';
@@ -26,8 +26,7 @@ class CustomAppBarDemo extends StatefulWidget {
   }
 }
 
-class _State extends State<CustomAppBarDemo>
-    with SingleTickerProviderStateMixin {
+class _State extends State<CustomAppBarDemo> with SingleTickerProviderStateMixin {
   List<TabItem> items = <TabItem>[
     TabItem(icon: Icons.home, title: 'Home'),
     TabItem(icon: Icons.map, title: 'Discovery'),
@@ -124,10 +123,7 @@ class _State extends State<CustomAppBarDemo>
         padding: EdgeInsets.only(bottom: 2),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            Icon(data.icon, color: color),
-            Text(data.title, style: TextStyle(color: color))
-          ],
+          children: <Widget>[Icon(data.icon, color: color), Text(data.title, style: TextStyle(color: color))],
         ));
   }
 
@@ -177,18 +173,13 @@ class _CustomBuilder extends DelegateBuilder {
         ),
       );
     }
-    var _icon = active
-        ? navigationItem.activeIcon ?? navigationItem.icon
-        : navigationItem.icon;
+    var _icon = active ? navigationItem.activeIcon ?? navigationItem.icon : navigationItem.icon;
     return Container(
       color: Colors.transparent,
       padding: EdgeInsets.only(bottom: 2),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
-        children: <Widget>[
-          Icon(_icon, color: _color),
-          Text(navigationItem.title, style: TextStyle(color: _color))
-        ],
+        children: <Widget>[Icon(_icon, color: _color), Text(navigationItem.title, style: TextStyle(color: _color))],
       ),
     );
   }

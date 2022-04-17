@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'package:convex_bottom_bar_gothomesafe/convex_bottom_bar_gothomesafe.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -53,13 +53,7 @@ class Data {
     NamedColor(Color(0xFFFFC107), 'Yellow'),
     NamedColor(Color(0xFF607D8B), 'Grey'),
   ];
-  static const badges = [
-    null,
-    Badge('1'),
-    Badge('hot',
-        badgeColor: Colors.orange, padding: EdgeInsets.only(left: 7, right: 7)),
-    Badge('99+', borderRadius: 2)
-  ];
+  static const badges = [null, Badge('1'), Badge('hot', badgeColor: Colors.orange, padding: EdgeInsets.only(left: 7, right: 7)), Badge('99+', borderRadius: 2)];
 
   static const curves = [
     ChoiceValue<Curve>(
@@ -92,10 +86,7 @@ class Data {
           activeIcon: Image.asset('images/sample-1-2.png'),
           title: 'Happy',
         ),
-        TabItem<Image>(
-            icon: Image.asset('images/sample-2.png'),
-            activeIcon: Image.asset('images/sample-2-2.png'),
-            title: 'New'),
+        TabItem<Image>(icon: Image.asset('images/sample-2.png'), activeIcon: Image.asset('images/sample-2-2.png'), title: 'New'),
         TabItem<Image>(
           icon: Image.asset('images/sample-3.png'),
           activeIcon: Image.asset('images/sample-3-2.png'),

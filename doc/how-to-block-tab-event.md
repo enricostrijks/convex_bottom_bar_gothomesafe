@@ -1,4 +1,5 @@
 # How to block tab event?
+
 The ConvexAppBar is similar to BottomAppBar, however there are something different, for example you can not float the notch button or handle the tab event separately.
 
 We can distinguish the tab by index of item. Or use a `onTabNotify` to block the tap event.
@@ -7,6 +8,7 @@ In this case the tab state won't change, they will remain as tap event never hap
 > Original designed for [#issue 98](https://github.com/hacktons/convex_bottom_bar/issues/98)
 
 ## Sample
+
 ![tab-hook.gif](tab-hook.gif)
 
 ```dart

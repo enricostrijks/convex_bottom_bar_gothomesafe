@@ -14,8 +14,6 @@
  *  limitations under the License.
  */
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import '../item.dart';
@@ -66,9 +64,7 @@ class FixedTabStyle extends InnerBuilder {
       size: style.iconSize,
       color: item.blend ? (c) : null,
     );
-    var children = noLabel
-        ? <Widget>[icon]
-        : <Widget>[icon, Text(item.title ?? '', style: textStyle)];
+    var children = noLabel ? <Widget>[icon] : <Widget>[icon, Text(item.title ?? '', style: textStyle)];
     return Container(
       padding: EdgeInsets.only(bottom: 2),
       child: Column(

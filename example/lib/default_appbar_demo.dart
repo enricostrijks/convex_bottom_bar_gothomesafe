@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'package:convex_bottom_bar_gothomesafe/convex_bottom_bar_gothomesafe.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -37,8 +37,7 @@ class DefaultAppBarDemo extends StatefulWidget {
   }
 }
 
-class _State extends State<DefaultAppBarDemo>
-    with SingleTickerProviderStateMixin {
+class _State extends State<DefaultAppBarDemo> with SingleTickerProviderStateMixin {
   static const kStyles = [
     ChoiceValue<TabStyle>(
       title: 'TabStyle.react',
@@ -51,9 +50,7 @@ class _State extends State<DefaultAppBarDemo>
       value: TabStyle.reactCircle,
     ),
     ChoiceValue<TabStyle>(
-      title: kIsWeb
-          ? 'TabStyle.flip (Flutter Web is not supported)'
-          : 'TabStyle.flip',
+      title: kIsWeb ? 'TabStyle.flip (Flutter Web is not supported)' : 'TabStyle.flip',
       label: 'Appbar use flip style',
       value: TabStyle.flip,
     ),
@@ -120,13 +117,10 @@ class _State extends State<DefaultAppBarDemo>
       ChooseTabItem(kTabTypes, _tabItems, _onTabItemTypeChanged),
       const Heading('Tab Style'),
     ];
-    options.addAll(kStyles.map((s) => RadioItem<TabStyle>(s, _style,
-        s.value == TabStyle.flip && kIsWeb ? null : _onStyleChanged)));
-    if (_style.value != TabStyle.fixed &&
-        _style.value != TabStyle.fixedCircle) {
+    options.addAll(kStyles.map((s) => RadioItem<TabStyle>(s, _style, s.value == TabStyle.flip && kIsWeb ? null : _onStyleChanged)));
+    if (_style.value != TabStyle.fixed && _style.value != TabStyle.fixedCircle) {
       options.add(const Heading('Animation Curve'));
-      options.addAll(
-          Data.curves.map((c) => RadioItem<Curve>(c, _curve, _onCurveChanged)));
+      options.addAll(Data.curves.map((c) => RadioItem<Curve>(c, _curve, _onCurveChanged)));
     }
 
     return Directionality(
@@ -137,18 +131,12 @@ class _State extends State<DefaultAppBarDemo>
           backgroundColor: _barColor,
           actions: <Widget>[
             IconButton(
-              icon: Icon(_textDirection == TextDirection.rtl
-                  ? Icons.format_textdirection_r_to_l
-                  : Icons.format_textdirection_l_to_r),
+              icon: Icon(_textDirection == TextDirection.rtl ? Icons.format_textdirection_r_to_l : Icons.format_textdirection_l_to_r),
               color: Colors.white,
-              tooltip: _textDirection == TextDirection.rtl
-                  ? "Change to LTR"
-                  : "Change to RTL",
+              tooltip: _textDirection == TextDirection.rtl ? "Change to LTR" : "Change to RTL",
               onPressed: () {
                 setState(() {
-                  _textDirection = _textDirection == TextDirection.ltr
-                      ? TextDirection.rtl
-                      : TextDirection.ltr;
+                  _textDirection = _textDirection == TextDirection.ltr ? TextDirection.rtl : TextDirection.ltr;
                 });
               },
             ),

@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-import 'package:convex_bottom_bar/src/painter.dart';
+import 'package:convex_bottom_bar_gothomesafe/src/painter.dart';
 import 'package:flutter/material.dart';
 
 /// Single convex button widget

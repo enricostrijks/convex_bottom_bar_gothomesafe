@@ -42,7 +42,7 @@ class ConvexNotchedRectangle extends NotchedShape {
 
     // The guest's shape is a circle bounded by the guest rectangle.
     // So the guest's radius is half the guest width.
-    final notchRadius = guest.width / 2.0;
+    final notchRadius = guest.width / 1.8;
 
     const s1 = 15.0;
     const s2 = 1.0;
@@ -79,8 +79,7 @@ class ConvexNotchedRectangle extends NotchedShape {
     return radius > 0
         ? (Path()
           ..moveTo(host.left, host.top + radius)
-          ..arcToPoint(Offset(host.left + radius, host.top),
-              radius: Radius.circular(radius))
+          ..arcToPoint(Offset(host.left + radius, host.top), radius: Radius.circular(radius))
           ..lineTo(p[0].dx, p[0].dy)
           ..quadraticBezierTo(p[1].dx, p[1].dy, p[2].dx, p[2].dy)
           ..arcToPoint(
@@ -90,8 +89,7 @@ class ConvexNotchedRectangle extends NotchedShape {
           )
           ..quadraticBezierTo(p[4].dx, p[4].dy, p[5].dx, p[5].dy)
           ..lineTo(host.right - radius, host.top)
-          ..arcToPoint(Offset(host.right, host.top + radius),
-              radius: Radius.circular(radius))
+          ..arcToPoint(Offset(host.right, host.top + radius), radius: Radius.circular(radius))
           ..lineTo(host.right, host.bottom)
           ..lineTo(host.left, host.bottom)
           ..close())
